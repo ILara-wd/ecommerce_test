@@ -13,6 +13,7 @@ import com.coppel.ecommerce.ktx.visible
 import com.coppel.ecommerce.ktx.gone
 import com.coppel.ecommerce.ktx.observe
 import com.coppel.ecommerce.ui.main.MainActivity
+import com.coppel.ecommerce.ui.signup.SignUpActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,6 +40,9 @@ class LoginActivity : AppCompatActivity() {
                 viewModel.password = it.toString().trim()
                 viewModel.validateCredentials()
             }
+            tvRegister.setOnClickListener {
+                SignUpActivity.launch(this@LoginActivity)
+            }
             loginButton.setOnClickListener {
                 viewModel.doLogin()
             }
@@ -58,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun handle(state: LoginViewModel.State?) {
         when (state) {
-            LoginViewModel.State.ShowError -> showError()
+            is LoginViewModel.State.ShowError -> showError(state.message)
             LoginViewModel.State.Loading -> showProgress()
             LoginViewModel.State.Success -> {
                 hideProgress()
@@ -69,11 +73,11 @@ class LoginActivity : AppCompatActivity() {
         }.exhaustive
     }
 
-    private fun showError() {
+    private fun showError(message: String) {
         hideProgress()
         Toast.makeText(
             this@LoginActivity,
-            getString(R.string.text_error_credentials),
+            message,
             Toast.LENGTH_SHORT
         ).show()
     }

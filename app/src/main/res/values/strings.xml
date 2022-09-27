@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">Coppel</string>
+    <string name="app_name">Coppel Store</string>
 
     <string name="log_in">Iniciar sesión</string>
+    <string name="sign_up">Registrar</string>
+    <string name="name">Nombre</string>
+    <string name="lastname">Apellido</string>
     <string name="email">Correo electrónico</string>
     <string name="password">Contraseña</string>
 
@@ -10,5 +13,10 @@
     <string name="sign_in_act_sign_in">Iniciar sesión</string>
     <string name="sign_in_act_create_account">Crear una cuenta</string>
     <string name="text_error_credentials">Verifique sus credenciales</string>
+
+    <!-- Sign Up-->
+    <string name="sign_up_act_login">Ya tengo Cuenta</string>
+    <string name="sign_up_act_register">Registrar</string>
+    <string name="text_error_register">Ha ocurrido un error al realizar el registro</string>
 
 </resources>

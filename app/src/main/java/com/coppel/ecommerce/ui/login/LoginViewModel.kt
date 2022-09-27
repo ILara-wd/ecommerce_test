@@ -20,7 +20,7 @@ class LoginViewModel @Inject constructor(
     private val isPasswordValid: IsPasswordValid,
 ) : ViewModel() {
 
-    private var charactersDBS: User? = null
+    private var user: User? = null
     private val _state: MutableStateFlow<State> = MutableStateFlow(State.IncompleteRequirements)
     val state: StateFlow<State> get() = _state
 
@@ -42,15 +42,15 @@ class LoginViewModel @Inject constructor(
             }
                 .onSuccess { response ->
                     if (response.code == 200) {
-                        charactersDBS = response.toDomain()
+                        user = response.toDomain()
                         _state.value = State.Success
-                        _state.value = State.ShowResults(charactersDBS)
+                        _state.value = State.ShowResults(user)
                     } else {
-                        _state.value = State.ShowError
+                        _state.value = State.ShowError(response.message ?: "")
                     }
                 }
                 .onFailure {
-                    _state.value = State.ShowError
+                    _state.value = State.ShowError(it.message ?: "")
                 }
         }
     }
@@ -59,7 +59,7 @@ class LoginViewModel @Inject constructor(
         object Loading : State()
         object Success : State()
         object IncompleteRequirements : State()
-        object ShowError : State()
+        data class ShowError(val message: String) : State()
         data class ShowResults(val response: User?) : State()
     }
 
