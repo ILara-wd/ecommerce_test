@@ -140,8 +140,8 @@
                 android:id="@+id/email_text_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
                 android:background="@color/background"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/yellow_coppel"
                 android:textColorHint="@color/black" />
 
@@ -187,7 +187,6 @@
             android:text="@string/sign_up_act_register"
             android:textAllCaps="false"
             android:textColor="@color/white"
-
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
@@ -196,14 +195,14 @@
 
         <ProgressBar
             android:id="@+id/progress_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:indeterminateTint="@color/yellow_coppel"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/register_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_text_input_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_text_view" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"

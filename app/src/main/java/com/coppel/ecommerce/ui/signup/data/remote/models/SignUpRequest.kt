@@ -1,4 +1,4 @@
-package com.coppel.ecommerce.data.signup
+package com.coppel.ecommerce.ui.signup.data.remote.models
 
 import com.google.gson.annotations.SerializedName
 

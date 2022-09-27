@@ -11,11 +11,13 @@ import com.coppel.ecommerce.R
 import com.coppel.ecommerce.databinding.ActivitySignUpBinding
 import com.coppel.ecommerce.ktx.*
 import com.coppel.ecommerce.ui.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignUpActivity : AppCompatActivity() {
 
-    private val binding: ActivitySignUpBinding by viewBinding(ActivitySignUpBinding::inflate)
     private val viewModel: SignUpViewModel by viewModels()
+    private val binding: ActivitySignUpBinding by viewBinding(ActivitySignUpBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,19 +42,19 @@ class SignUpActivity : AppCompatActivity() {
         with(binding) {
             nameTextInputEditText.addTextChangedListener {
                 viewModel.name = it.toString().trim()
-                viewModel.validateCredentials()
+                viewModel.validateRegister()
             }
             lastNameTextInputEditText.addTextChangedListener {
                 viewModel.lastname = it.toString().trim()
-                viewModel.validateCredentials()
+                viewModel.validateRegister()
             }
             emailTextInputEditText.addTextChangedListener {
                 viewModel.email = it.toString().trim()
-                viewModel.validateCredentials()
+                viewModel.validateRegister()
             }
             passwordTextInputEditText.addTextChangedListener {
                 viewModel.password = it.toString().trim()
-                viewModel.validateCredentials()
+                viewModel.validateRegister()
             }
             tvLogin.setOnClickListener {
                 finish()
@@ -68,8 +70,8 @@ class SignUpActivity : AppCompatActivity() {
             is SignUpViewModel.State.ShowError -> showError(state.message)
             SignUpViewModel.State.Loading -> showProgress()
             is SignUpViewModel.State.Success -> {
+                showToast(state.response)
                 hideProgress()
-                MainActivity.launch(this)
                 finish()
             }
             else -> Unit
@@ -78,6 +80,10 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun showError(message: String) {
         hideProgress()
+        showToast(message)
+    }
+
+    private fun showToast(message: String) {
         Toast.makeText(
             this@SignUpActivity,
             message,

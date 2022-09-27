@@ -1,4 +1,4 @@
-package com.coppel.ecommerce.ui.login.domain.usecases
+package com.coppel.ecommerce.domain.usecases
 
 import dagger.Reusable
 import javax.inject.Inject

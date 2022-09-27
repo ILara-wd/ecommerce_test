@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.coppel.ecommerce.ui.login.domain.models.User
 import com.coppel.ecommerce.ui.login.domain.models.toDomain
-import com.coppel.ecommerce.ui.login.domain.usecases.IsEmailValid
-import com.coppel.ecommerce.ui.login.domain.usecases.IsPasswordValid
+import com.coppel.ecommerce.domain.usecases.IsEmailValid
+import com.coppel.ecommerce.domain.usecases.IsPasswordValid
 import com.coppel.ecommerce.ui.login.domain.usecases.LoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

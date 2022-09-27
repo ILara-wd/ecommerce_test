@@ -1,4 +1,4 @@
-package com.coppel.ecommerce.ui.login.domain.usecases
+package com.coppel.ecommerce.domain.usecases
 
 import android.util.Patterns
 import dagger.Reusable
