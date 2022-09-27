@@ -11,4 +11,7 @@ class CoppelRepository @Inject constructor(
     suspend fun signUp(signUpRequest: SignUpRequest): SignUpResponse {
         return coppelRemoteDataSource.signUp(signUpRequest)
     }
+    suspend fun login(signUpRequest: SignUpRequest): SignUpResponse {
+        return coppelRemoteDataSource.signUp(signUpRequest)
+    }
 }

@@ -1,5 +1,6 @@
 package com.coppel.ecommerce.data.remote.services
 
 internal object CoppelServiceNames {
-    const val CREATE_USER = "user/create"
+    const val REGISTER = "register.php"
+    const val LOGIN = "login.php"
 }
