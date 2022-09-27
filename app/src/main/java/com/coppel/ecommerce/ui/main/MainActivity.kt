@@ -1,8 +1,7 @@
-package com.coppel.ecommerce.ui
+package com.coppel.ecommerce.ui.main
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.coppel.ecommerce.R

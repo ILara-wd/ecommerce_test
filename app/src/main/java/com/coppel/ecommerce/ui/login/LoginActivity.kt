@@ -12,7 +12,7 @@ import com.coppel.ecommerce.ktx.exhaustive
 import com.coppel.ecommerce.ktx.visible
 import com.coppel.ecommerce.ktx.gone
 import com.coppel.ecommerce.ktx.observe
-import com.coppel.ecommerce.ui.MainActivity
+import com.coppel.ecommerce.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
