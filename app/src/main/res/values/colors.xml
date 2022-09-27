@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#C9CCCF</color>
+
+    <color name="fonts">#536473</color>
+    <color name="background">#656565</color>
+    <color name="wild_sand">#F4F4F4</color>
+    <color name="big_stone">#111D2A</color>
+    <color name="oxford_blue">#313C4A</color>
+
+    <color name="yellow_coppel">#ffdd30</color>
+    <color name="blue_coppel">#285BA7</color>
+
 </resources>
