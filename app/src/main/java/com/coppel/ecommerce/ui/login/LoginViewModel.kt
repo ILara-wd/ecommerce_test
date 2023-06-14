@@ -44,7 +44,7 @@ class LoginViewModel @Inject constructor(
                     if (response.code == 200) {
                         user = response.toDomain()
                         _state.value = State.Success
-                        _state.value = State.ShowResults(user)
+                        //_state.value = State.ShowResults(user)
                     } else {
                         _state.value = State.ShowError(response.message ?: "")
                     }

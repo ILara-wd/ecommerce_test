@@ -98,4 +98,11 @@ dependencies {
     implementation "androidx.activity:activity-ktx:$androidx_activity_version"
     implementation "androidx.fragment:fragment-ktx:$androidx_fragment_version"
 
+
+    testImplementation 'junit:junit:4.+'
+    testImplementation "io.mockk:mockk:1.12.2"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0' //Ya estaba, la hemos actualizado.
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
 }
